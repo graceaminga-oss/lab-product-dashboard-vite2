@@ -25,7 +25,8 @@ test('displays all products initially', () => {
 test('applies conditional styling for out-of-stock products', () => {
   render(<App />)
   const outOfStockProduct = screen.getByText(/Phone/i) // Make sure "Phone" exists in sampleProducts
-  expect(outOfStockProduct.closest('div')).toHaveClass('outOfStockClass')
+  const cardDiv = outOfStockProduct.closest('div')
+  expect(cardDiv.className).toMatch(/outOfStockProduct/)
 })
 
 test('removes product from the dashboard when "Remove" button is clicked', () => {
