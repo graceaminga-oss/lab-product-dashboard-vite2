@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "server": "json-server --watch db.json --port 4000",
     "lint": "eslint .",
-    "test": "vitest",
+    "test": "vitest run --reporter=junit --outputFile=./junit.xml",
     "test:watch": "vitest --watch"
   },
   "dependencies": {
